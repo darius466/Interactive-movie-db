@@ -1,0 +1,126 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+    <title>Database Project</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Bootstrap core CSS 
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="cover.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="add-film.css">
+    <script type="text/javascript" src="ajax.js"></script>
+
+  </head>
+
+  <body class="text-center p-3 mb-2 bg-dark text-white">
+
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand">Home</h3>
+        </div>
+      </header>
+
+      <main role="main" class="inner cover">
+        <h1 class="cover-heading">Interactive Movie Database</h1>
+        <p class="lead">A website by Darius Walker</p>
+        <div class="col">
+            <!--input for film search-->
+            <form action="search-film.php" method="GET">
+              <input type = "text" name = "movie" class = "border-0 p-0 font-14 form-control" placeholder="movie" id = "movie-search" />
+              <input class = "btn btn-primary" type = "submit" value = "search" />
+            </form>
+            <br>
+            <br>
+            <br>
+            <!--list for dynamic search results-->
+            <div id="results">
+              <ul id="list">
+              <li>[Search results will display here.]</li>
+              </ul>
+            </div>
+            <br>
+            <br>
+            <br>
+            <!--buttons for add and browse-->
+            <button id="add-film" class="btn btn-sm btn-secondary">add films</button> <a href="http://ec2-54-167-14-156.compute-1.amazonaws.com/web_final/movies.php" class="btn btn-sm btn-secondary">browse</a>
+            <br>
+            <br>
+            <br>
+            <img id = "popcorn" src="https://www.searchpng.com/wp-content/uploads/2018/12/Movie-ticket-with-popcorn-Clipart-Png-715x715.png" alt="popcorn">
+            <br>
+            <br>
+            <br>
+            <!--form for add is hiddin until toggled-->
+            <form id="form1" action="add-film.php" method="POST">
+              <div class="form-group">
+                <label for="title">title</label>
+                <input type="text" class="form-control" name="title" placeholder="title">
+              </div>
+              <div class="form-group">
+                <label for="desc">description</label>
+                <input type="text" class="form-control" name="desc" placeholder="description">
+              </div>
+              <div class="form-group">
+                <label for="director">director</label>
+                <input type="text" class="form-control" name="director" placeholder="director">
+              </div>
+              <div class="form-group">
+                <label for="writer">writer</label>
+                <input type="text" class="form-control" name="writer" placeholder="writer">
+              </div>
+              <div class="form-group">
+                <label for="fact">fact</label>
+                <input type="text" class="form-control" name="fact" placeholder="fact">
+              </div>
+              <div class="form-group">
+                <label for="image">image</label>
+                <input type="text" class="form-control" name="image" placeholder="image">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <small id="close" class="form-text text-muted">close form by clicking add-films button again</small>
+            </form>
+        </div>
+      </main>
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <br>
+          <br>
+          <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+        </div>
+      </footer>
+    </div>
+    <script type="text/javascript" src="movie-search.js"></script>
+    <script type="text/JavaScript">
+
+      //jquery function for show/hide main image and submission form
+      $(document).ready(function() {
+        $("#add-film").click(function() {
+          $("#form1").toggle();
+          $("#popcorn").toggle();
+        });
+      });
+
+    </script>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+
+</html>
